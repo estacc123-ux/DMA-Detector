@@ -1,5 +1,4 @@
 // DmaDetector - stand alone bus scanner driver.
-//
 //the whole point of this driver is that it talks to the PCI bus directly instead of asking Windows what's plugged in.
 // Anti-cheat / DMA detection background that shaped the approach lives in pci.cpp (config-space limits) and lib/bus.cpp (known id list, sourced from the pcileech-fpga docs).
 // The general idea of treating DMA hardware as something you fingerprint rather than trust the OS to report is the same one pcileech's own docs note when they say editing IDs alone doesn't beat a real detector:
