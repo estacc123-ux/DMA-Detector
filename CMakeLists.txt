@@ -5,7 +5,7 @@ project(DmaDetector LANGUAGES CXX)
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-# ---- ring3 library + CLI ---------------------------------------------------
+# ring3 library + CLI
 add_library(DmaDetectorLib STATIC
         lib/bus.cpp
 )
@@ -19,7 +19,7 @@ add_executable(DmaDetector
 
 target_link_libraries(DmaDetector PUBLIC DmaDetectorLib)
 
-# ---- ring0 driver (only when the WDK is around) ----------------------------
+# ring0 driver (only when the WDK is around)
 if (NOT EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/vendor/FindWDK/CMakeLists.txt")
     include(FetchContent)
     FetchContent_Declare(
