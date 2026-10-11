@@ -11,12 +11,10 @@ namespace Dma {
 //   https://github.com/ufrisk/pcileech-fpga/blob/master/pciescreamer/build.md
 //   https://github.com/ufrisk/pcileech-fpga/blob/master/PCIeSquirrel/build.md
 // Beyond that we deliberately keep the table small: the same guides show that
-// firmware can rewrite its own vendor id, device id, class code and BARs, so
-// ID matching is a fingerprint, not proof. A stock-firmware card or an FPGA
-// vendor on a consumer board is worth flagging; anything else we stay quiet
-// about. The line of thinking (config-space fingerprint comparison instead of
-// ID lists alone) tracks the DMA-cheat community's own writeup of what
-// anti-cheats look for: https://dma.lystic.dev/anticheat-evasion/detection-vectors
+// firmware can rewrite its own vendor id, device id, class code and BARs, so the ID matching is a fingerprint, not proof. 
+// A stock-firmware card or an FPGA vendor on a consumer board is worth flagging; anything else we stay quiet about. 
+// The line of thinking (config-space fingerprint comparison instead of ID lists alone) tracks the DMA-cheat community's own writeup of what anti-cheats look for: 
+// https://dma.lystic.dev/anticheat-evasion/detection-vectors
 struct DevMatch {
 	uint16_t Vendor;
 	uint16_t Device;
@@ -30,7 +28,7 @@ static const DevMatch s_KnownDevices[] = {
 	{ 0x1412, 0x124b, "Tiger Jet bridge (classic pcileech spoof target)" },
 };
 
-// FPGA vendors that have no business sitting in a gaming machine.
+// FPGA vendors that have no business sitting in a gaming machine
 static const uint16_t s_FpgaVendors[] = {
 	0x10ee, // Xilinx/AMD
 	0x1204, // Lattice
