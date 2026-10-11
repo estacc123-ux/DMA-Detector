@@ -20,7 +20,7 @@ enum class RequestType : uint32_t {
 	ScanBus = 0,
 	QueryStats = 1,
 };
-
+// ty "https://www.vergiliusproject.com/kernels" for this
 // One device, straight from config space. Everything past this (scoring, vendor names) is derived ring3-side.
 struct WireDevice {
 	uint16_t VendorId;
